@@ -1,3 +1,10 @@
+# RAW folder
+/RAW
+.csv
+.xlsx
+.pdf
+
+
 # History files
 .Rhistory
 .Rapp.history
