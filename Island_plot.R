@@ -7,7 +7,7 @@
 # Load in required libraries 
 library(tidyverse)
 library(tmap) # for plotting country
-library(geodata) # for pulling country shape files
+library(geodata) # for pulling country simple features
 library(sf) # coverting spatvector to sf
 library(stringr) # working with text strings
 library(terra) # spatial data analysis
@@ -39,12 +39,12 @@ coord_df <- data.frame(lat = c(24.9314, 26.6594, 25.0443),
   left_join(island_df, by =  "Island") %>%
   st_as_sf(coords = c("lon", "lat"), crs = 4326) # convert to shapefile
 
-# Plot mapwith islands highlighted 
-tm_shape(Bahamas) +
-  tm_fill(col = "#0c3c62") +
-  tm_shape(coord_df) +
-  tm_dots(col  = "#f36c34", size = .75) +
-  tm_layout(title = "BETA Student's Islands of Residence", 
+# Plot map with islands highlighted 
+tm_shape(Bahamas) + # Plot Bahamas
+  tm_fill(col = "#0c3c62") + # Make islands blue
+  tm_shape(coord_df) + # Plot islands of interest
+  tm_dots(col  = "#f36c34", size = .75) + # plot dots 
+  tm_layout(title = "BETA Student's Islands of Residence", # Add title 
             title.position = c("left", "bottom"),
             bg.color = "#F0F8FF")
 
