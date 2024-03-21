@@ -5,6 +5,8 @@ Code for generating insights about participation in [BETA (Bahamas Engineering a
 
 `Island_map.R` uses spatial data analysis packages  [geodata](https://cran.r-project.org/web/packages/geodata/index.html), [sf](https://r-spatial.github.io/sf/),  [terra](https://cran.r-project.org/web/packages/terra/index.html), and [tmap](https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html)to pull a simple features map of the Bahamas and plot locations of island of interest after adding in a database of students' locations. 
 
+![Island Plot](https://github.com/alburycatalina/BETA-Reporting/blob/main/Plots/Island_plot.png)
+
 It's useful for BETA to quantify student participation from across the islands of the Bahamas. Historically, distribution of educational (and other) resources to the outer Bahamian islands known as the Family Islands has faced inequities compared to the more populated city of Nassau, New Providence, [as is the case in many rural communities](https://academic.oup.com/joeg/article/21/5/683/5998980).
 
 I begin by downloading the Bahamas administrative boundary data using geodata's `gadm()` function. This function requires the country's 3 character ISO code (in this case "BHS"). A list of available ISO codes can be found with `country_codes()`. Then, I convert the raster data to a Simple Feature (sf) object using terra's `as_sf()`. Simple Features are a two-dimensional geometries used for geographic features, and are common in geospatial analysis. 
@@ -44,9 +46,7 @@ tm_shape(coord_df) + # Plot islands of interest
             bg.color = "#F0F8FF")
 ```
 
-Here's the final product. 
 
-![Island Plot](https://github.com/alburycatalina/BETA-Reporting/blob/main/Plots/Island_plot.png)
 
 
 
