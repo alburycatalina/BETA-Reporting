@@ -1,4 +1,4 @@
-# This script makes a map of the Bahamas with participant numbers per island
+# This script makes a map of the Bahamas with participant locations marked
 
 
 
@@ -16,7 +16,7 @@ library(terra) # spatial data analysis
 # Set wd
 setwd("~/OneDrive/Documents/Life/Coding-Projects/BETA-Reporting/RAW")
 
-
+# Pull df with participant data 
 participant_df <- read.csv("BETA Camp 2021 Applicants - General.csv")
 
 
